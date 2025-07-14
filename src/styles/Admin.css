@@ -1,0 +1,307 @@
+.admin-panel,
+.admin-login-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background-color: #fdf6ec;
+  font-family: "Poppins", sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(93, 58, 155, 0.05);
+}
+
+.admin-panel h2,
+.admin-login-container h2 {
+  color: #512888;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.admin-login-form input[type="email"],
+.admin-login-form input[type="password"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+}
+
+.admin-login-form .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.admin-login-form button {
+  padding: 10px;
+  background-color: #b48ad4;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-login-form button:hover {
+  background-color: #a67cc3;
+}
+
+.btn-logout {
+  background-color: #d2b4de;
+  color: #512888;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #c39bd3;
+}
+
+.admin-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.admin-tabla th,
+.admin-tabla td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.admin-tabla th {
+  background-color: #e6ccff;
+  color: #333;
+}
+
+.admin-tabla tr:hover {
+  background-color: #f9f4ff;
+}
+
+.admin-img {
+  width: 50px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-editar,
+.btn-eliminar,
+.btn-guardar,
+.btn-cancelar {
+  padding: 6px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.btn-editar {
+  background-color: #f9e79f;
+  color: #5d3a9b;
+}
+
+.btn-eliminar {
+  background-color: #f7dc6f;
+  color: white;
+}
+
+.btn-guardar {
+  background-color: #be78b6;
+  color: #fff;
+}
+
+.btn-cancelar {
+  background-color: #ed71a0;
+  color: #fff;
+}
+
+.nuevo-producto-form .btn-crear {
+  padding: 10px 16px;
+  background-color: #a67cc3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nuevo-producto-form .btn-crear:hover {
+  background-color: #8f65b1;
+}
+
+.admin-mensaje {
+  text-align: center;
+  color: #512888;
+  padding: 20px;
+}
+
+.admin-tabla textarea {
+  width: 100%;
+  resize: vertical;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  min-height: 50px;
+}
+
+.admin-description {
+  display: block;
+  max-height: 4.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 1.3em;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.nuevo-producto-form {
+  background-color: #fef9f5;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(93, 58, 155, 0.1);
+}
+
+.nuevo-producto-form input,
+.nuevo-producto-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+}
+
+.nuevo-producto-form textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.nuevo-toggle {
+  cursor: pointer;
+  color: #512888;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.nuevo-toggle:hover {
+  background-color: #e6e5e8;
+}
+
+@media (max-width: 768px) {
+  .admin-panel {
+    padding: 10px;
+  }
+
+  .admin-tabla,
+  .admin-tabla thead,
+  .admin-tabla tbody,
+  .admin-tabla th,
+  .admin-tabla td,
+  .admin-tabla tr {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-tabla thead tr {
+    display: none;
+  }
+
+  .admin-tabla td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .admin-tabla td::before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #512888;
+  }
+
+  .admin-tabla td:nth-of-type(1)::before { content: "ID"; }
+  .admin-tabla td:nth-of-type(2)::before { content: "Nombre"; }
+  .admin-tabla td:nth-of-type(3)::before { content: "Precio"; }
+  .admin-tabla td:nth-of-type(4)::before { content: "Descripción"; }
+  .admin-tabla td:nth-of-type(5)::before { content: "Imagen"; }
+  .admin-tabla td:nth-of-type(6)::before { content: "Acciones"; }
+
+  .admin-img {
+    max-width: 80px;
+    height: auto;
+    margin-top: 5px;
+  }
+
+  .nuevo-producto-form input,
+  .nuevo-producto-form textarea,
+  .nuevo-producto-form button {
+    font-size: 0.9rem;
+  }
+
+  .btn-editar,
+  .btn-eliminar,
+  .btn-guardar,
+  .btn-cancelar {
+    display: inline-block;
+    width: 48%;
+    margin: 4px 1%;
+    font-size: 0.8rem;
+  }
+
+
+  .admin-login-container {
+    padding: 15px;
+    margin: 20px auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .admin-login-form {
+    max-width: 100%;
+  }
+
+  .admin-login-form input[type="email"],
+  .admin-login-form input[type="password"] {
+    font-size: 0.95rem;
+  }
+
+  .admin-login-form button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}

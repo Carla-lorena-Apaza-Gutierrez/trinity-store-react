@@ -1,0 +1,55 @@
+.contacto-container {
+max-width: 600px;
+margin: 40px auto;
+padding: 30px;
+background-color: #fdf6ec;
+border-radius: 12px;
+box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+font-family: 'Poppins', sans-serif;
+}
+
+.contacto-titulo {
+font-size: 1.4rem;
+font-weight: 600;
+color: #5d3a9b;
+text-align: center;
+margin-bottom: 20px;
+}
+
+.contacto-container .form-control {
+font-family: 'Poppins', sans-serif;
+font-size: 0.95rem;
+padding: 10px;
+border-radius: 6px;
+border: 1px solid #ccc;
+}
+
+.contacto-container .btn-success {
+background-color: #9c6fc4;
+border: none;
+font-weight: 600;
+font-size: 1rem;
+padding: 10px;
+border-radius: 6px;
+}
+
+.contacto-container .btn-success:hover {
+background-color: #8253ab;
+}
+
+@media (max-width: 768px) {
+  .contacto-container {
+    padding: 20px 16px;
+    margin: 20px 12px;
+  }
+
+  .contacto-container .form-control {
+    font-size: 0.9rem;
+    padding: 9px;
+  }
+
+  .contacto-container .btn-success {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
