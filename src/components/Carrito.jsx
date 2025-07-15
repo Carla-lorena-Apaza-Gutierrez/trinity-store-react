@@ -1,7 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useCarritoContext } from "../hooks/useCarritoContext";
 import { useAuthContext } from "../hooks/useAuthContext";
-import { dispararSweetBasico } from "../assets/SweetAlert";
+import { dispararSweetBasico } from "../assets/sweetAlert";
 import { toast } from "react-toastify";
 import "../styles/Carrito.css";
 
