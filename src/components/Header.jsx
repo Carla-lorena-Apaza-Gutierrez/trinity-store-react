@@ -6,14 +6,13 @@ import logo from "../assets/logo.svg";
 import { FaUser, FaShoppingCart, FaSearch, FaTimes } from "react-icons/fa";
 import styled from "styled-components";
 
-
 const StyledHeader = styled.header`
   background-color: #fef6ed;
   font-family: 'Poppins', sans-serif;
-  padding: 10px 20px;
-
+  padding: 10px 0;
   overflow-x: hidden;
   width: 100%;
+  margin: 0;
 `;
 
 const LogoContainer = styled.div`
@@ -108,11 +107,11 @@ const CartCounter = styled.span`
   border-radius: 12px;
 `;
 
-
 const ModalBusqueda = styled.div`
-  position: absolute;
-  top: 205px;
-  right: 35px;
+  position: fixed;
+  bottom: 70px;
+  left: 15px;
+  right: auto;
   background-color: #fef6ed;
   border: 2px solid #b264c4;
   border-radius: 10px;
@@ -120,16 +119,12 @@ const ModalBusqueda = styled.div`
   z-index: 999;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 
-  @media (max-width: 768px) {
-    position: fixed;
-    top: auto;
-    bottom: 70px;
-    left: 15px;
-    right: auto;
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
 
-const InputBusqueda = styled.input`
+const InputBusquedaDesktop = styled.input`
   width: 240px;
   padding: 13px 16px;
   font-size: 16px;
@@ -139,6 +134,7 @@ const InputBusqueda = styled.input`
   font-family: 'Poppins', sans-serif;
   color: #5e2767;
   background-color: #fff;
+  margin-left: 10px;
 
   &::placeholder {
     color: #b264c4;
@@ -155,7 +151,6 @@ const CerrarModal = styled.button`
   color: #5e2767;
   cursor: pointer;
 `;
-
 
 const BottomBar = styled.div`
   position: fixed;
@@ -180,6 +175,7 @@ export default function Header() {
   const cantidadItems = productosCarrito.reduce((acc, prod) => acc + prod.cantidad, 0);
 
   const [busqueda, setBusqueda] = useState("");
+  const [mostrarInput, setMostrarInput] = useState(false);
   const [mostrarModal, setMostrarModal] = useState(false);
 
   function handleLoginClick() {
@@ -198,29 +194,48 @@ export default function Header() {
       navigate(`/productos?query=${encodeURIComponent(busqueda.trim())}`);
       setBusqueda("");
       setMostrarModal(false);
+      setMostrarInput(false);
     }
   }
 
   return (
-    <StyledHeader className="container-fluid">
-      <LogoContainer>
-        <Link to="/">
-          <LogoImg src={logo} alt="Trinity Store Logo" />
-        </Link>
-      </LogoContainer>
+    <StyledHeader>
+      <div className="d-flex justify-content-between align-items-center flex-wrap px-3">
+        <div className="d-none d-md-flex align-items-center">
+          <Icono onClick={() => setMostrarInput(prev => !prev)}><FaSearch /></Icono>
+          {mostrarInput && (
+            <form onSubmit={handleBuscarSubmit}>
+              <InputBusquedaDesktop
+                type="text"
+                placeholder="¿Qué estás buscando?"
+                value={busqueda}
+                onChange={(e) => setBusqueda(e.target.value)}
+                autoFocus
+              />
+            </form>
+          )}
+        </div>
+
+        <LogoContainer className="mx-auto">
+          <Link to="/">
+            <LogoImg src={logo} alt="Trinity Store Logo" />
+          </Link>
+        </LogoContainer>
+
+        <div className="d-none d-md-flex align-items-center gap-4">
+          <Icono title={usuarioLogeado ? "Ir a tu perfil" : "Iniciar sesión"} onClick={handleLoginClick}><FaUser /></Icono>
+          <CartWrapper onClick={() => navigate("/carrito")}>
+            <Icono title="Ver carrito"><FaShoppingCart /></Icono>
+            {cantidadItems > 0 && <CartCounter>{cantidadItems}</CartCounter>}
+          </CartWrapper>
+        </div>
+      </div>
 
       <NavRow>
         <NavLinkStyled to="/">Inicio</NavLinkStyled>
         <NavLinkStyled to="/productos">Productos</NavLinkStyled>
         <NavLinkStyled to="/nosotros">Nosotros</NavLinkStyled>
         <NavLinkStyled to="/contacto">Contacto</NavLinkStyled>
-
-        <Icono title="Buscar productos" onClick={() => setMostrarModal(true)}><FaSearch /></Icono>
-        <Icono title={usuarioLogeado ? "Ir a tu perfil" : "Iniciar sesión"} onClick={handleLoginClick}><FaUser /></Icono>
-        <CartWrapper onClick={() => navigate("/carrito")}>
-          <Icono title="Ver carrito"><FaShoppingCart /></Icono>
-          {cantidadItems > 0 && <CartCounter>{cantidadItems}</CartCounter>}
-        </CartWrapper>
       </NavRow>
 
       <NavGrid>
@@ -234,7 +249,7 @@ export default function Header() {
         <ModalBusqueda>
           <CerrarModal onClick={() => setMostrarModal(false)}><FaTimes /></CerrarModal>
           <form onSubmit={handleBuscarSubmit}>
-            <InputBusqueda
+            <InputBusquedaDesktop
               type="text"
               placeholder="Buscar productos..."
               value={busqueda}

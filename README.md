@@ -95,7 +95,12 @@ src/
 - Redirección automática a `/admin` o `/carrito` según el tipo de usuario.
 - Sesión persistente con `localStorage`.
 
----
+### 🧪 Acceso de administrador para pruebas
+
+- **Email:** lorenanidorino@gmail.com  
+- **Contraseña:** 202020
+- **Rol:** Administrador (recordá marcar el checkbox al iniciar sesión)
+
 
 ## ▶️ Cómo Ejecutar el Proyecto
 

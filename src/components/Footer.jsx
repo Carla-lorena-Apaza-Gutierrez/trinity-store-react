@@ -3,8 +3,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
 
+
 const FooterWrapper = styled.footer`
-  background-color: #f8f9fa;
+  background-color:rgb(237, 221, 226);
   padding: 30px 0;
   font-family: 'Poppins', sans-serif;
   color: #333;
@@ -12,7 +13,7 @@ const FooterWrapper = styled.footer`
   font-size: 0.95rem;
 
   a {
-    color:rgb(129, 42, 132);
+    color:rgb(118, 43, 121);
     text-decoration: none;
   }
 
@@ -29,6 +30,12 @@ const FooterWrapper = styled.footer`
     display: flex;
     gap: 12px;
     font-size: 1.4rem;
+  }
+
+  .payment-icons img,
+  .shipping-icons img {
+    height: 28px;
+    margin: 4px;
   }
 
   @media (max-width: 576px) {
@@ -61,13 +68,13 @@ function Footer() {
           </Col>
 
           <Col sm={4} className="mt-sm-3">
-            <p className="footer-title">Contacto</p>
+            <p className="footer-title">Contactános</p>
             <p>trinity@store.com</p>
-            <p>+54 11 1234-5678</p>
+            <p>+54 221 6031-112</p>
           </Col>
 
           <Col sm={4} className="mt-sm-3">
-            <p className="footer-title">Seguinos</p>
+            <p className="footer-title">Sigamos conectadas</p>
             <div className="social-icons">
               <a
                 href="https://www.instagram.com/trinity.underwear?igsh=dXRzdWJiNXd0OWc4"
@@ -82,7 +89,33 @@ function Footer() {
             </div>
           </Col>
         </Row>
+
         <hr />
+
+        <Row className="mt-4 text-center">
+          <Col md={12} className="mb-3">
+            <p className="footer-title">Medios de pago</p>
+            <div className="payment-icons">
+                  <img src="/imagenes/visa.png" alt="Visa" />
+                  <img src="/imagenes/mastercard.png" alt="Mastercard" />
+                  <img src="/imagenes/pagofacil.png" alt="Pago Fácil" />
+                  <img src="/imagenes/rapipago.png" alt="Rapipago" />
+                  <img src="/imagenes/M.P.png" alt="Mercado Pago" />
+
+            </div>
+          </Col>
+
+          <Col md={12}>
+            <p className="footer-title">Medios de envío</p>
+            <div className="shipping-icons">
+                  <img src="/imagenes/correoARG.png" alt="Correo Argentino" />
+                  <img src="/imagenes/Andreani.png" alt="Andreani" />
+            </div>
+          </Col>
+        </Row>
+
+        <hr />
+
         <p className="text-center mt-3 mb-0">
           &copy; 2025 - Trinity Store. Todos los derechos reservados.
         </p>
